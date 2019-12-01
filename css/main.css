@@ -62,10 +62,3 @@ ul.posts li {
   margin-right: auto;
   max-width: 50%;
 }
-
-.grad {
-  height: 100vw;
-  width: 100vw;
-  background-color: white; /* For browsers that do not support gradients */
-  background-image: radial-gradient(farthest-side at 50% 50%, white, grey); /* Standard syntax (must be last) */
-}
