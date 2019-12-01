@@ -24,6 +24,7 @@ h1 {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     margin-block-end: 0em;
     margin-block-start: 0em;
+    text-align: center;
 }
 p {
     font-size: 1.5em;
@@ -32,6 +33,7 @@ p {
 }
 
 p.tagline{
+    text-align: center;
     margin-block-end: 0em;
     margin-block-start: 0em;
 }
