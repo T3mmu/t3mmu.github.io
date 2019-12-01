@@ -29,6 +29,10 @@ p {
     color: #333;
 }
 
+p.welcome{
+  margin-block-end: 0em;
+}
+
 ul {
     font-size: 1.5em;
     line-height: 1.4em;
@@ -40,8 +44,8 @@ footer {
     font-size: .8em;
 }
 
-ul.posts { 
-    margin: 20px auto 40px; 
+ul.posts {
+    margin: 20px auto 40px;
     font-size: 1.5em;
 }
 
