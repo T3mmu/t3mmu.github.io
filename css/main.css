@@ -1,6 +1,7 @@
 body {
     margin: 2em auto;
     width: 90vw;
+    background-color: whitesmoke;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -33,7 +34,7 @@ p {
 
 p.tagline{
     text-align: center;
-    margin-top: auto;
+    margin: 1em 0em;
 }
 
 ul {
