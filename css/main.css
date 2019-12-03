@@ -1,7 +1,7 @@
 body {
     margin: 2em auto;
     width: 90vw;
-    background-color: whitesmoke;
+    font-family:"Segoe UI",'Helvetica', 'Arial', 'Sans-Serif';
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -22,9 +22,7 @@ a:hover {
 }
 h1 {
     font-size: 3em;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
     margin-bottom: auto;
-    text-align: center;
 }
 p {
     font-size: 1.5em;
@@ -32,9 +30,10 @@ p {
     color: #333;
 }
 
-p.tagline{
-    text-align: center;
-    margin: 1em 0em;
+.tagline{
+    margin: 0.2em 0em 1em 0em;
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 
 ul {
@@ -62,4 +61,15 @@ ul.posts li {
   margin-left: auto;
   margin-right: auto;
   max-width: 50%;
+}
+
+.about-me-section {
+  background-color: #fafafa;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2em;
+  position: relative;
+  padding-left: 1.5rem;
 }
