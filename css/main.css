@@ -1,6 +1,4 @@
 body {
-    margin: 2em auto;
-    width: 90vw;
     font-family:"Segoe UI",'Helvetica', 'Arial', 'Sans-Serif';
 }
 nav ul, footer ul {
@@ -56,15 +54,16 @@ ul.posts li {
     list-style: none;
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 50%;
+section {
+  padding: 1em;
+  width: 100vw;
 }
 
 .about-me-section {
   background-color: #fafafa;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
 
@@ -72,4 +71,20 @@ ul.posts li {
   font-size: 2em;
   position: relative;
   padding-left: 1.5rem;
+}
+
+.section-title::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 100%;
+    background: #217346;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
+
+.mb-1 {
+  margin-bottom: 1em;
 }
