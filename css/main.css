@@ -1,5 +1,6 @@
 body {
     font-family:"Segoe UI",'Helvetica', 'Arial', 'Sans-Serif';
+    margin: 0;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -20,7 +21,7 @@ a:hover {
 }
 h1 {
     font-size: 3em;
-    margin-bottom: auto;
+    margin:0;
 }
 p {
     font-size: 1.5em;
@@ -29,9 +30,9 @@ p {
 }
 
 .tagline{
-    margin: 0.2em 0em 1em 0em;
     font-size: 1.5rem;
     font-weight: 300;
+    margin: 0;
 }
 
 ul {
@@ -62,6 +63,7 @@ section {
 .about-me-section {
   background-color: #fafafa;
   display: block;
+  padding-top: 3em
   margin-left: auto;
   margin-right: auto;
   text-align: center;
