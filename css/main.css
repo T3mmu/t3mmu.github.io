@@ -1,9 +1,9 @@
 body {
     font-family:"Segoe UI",'Helvetica', 'Arial', 'Sans-Serif';
+    font-size: 1em;
     margin: 0;
 }
 nav ul, footer ul {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
     list-style: none;
     font-weight: bold;
@@ -24,8 +24,7 @@ h1 {
     margin:0;
 }
 p {
-    font-size: 1.5em;
-    line-height: 1.4em;
+    line-height: 1.5em;
     color: #333;
 }
 
@@ -57,13 +56,12 @@ ul.posts li {
 
 section {
   padding: 1em;
-  width: 100vw;
 }
 
 .about-me-section {
   background-color: #fafafa;
   display: block;
-  padding-top: 3em
+  padding-top: 3em;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
