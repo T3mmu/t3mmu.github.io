@@ -1,34 +1,32 @@
 .grid-container {
     display: grid;
-    grid-gap: 20px;
     grid-template-areas: "Header"
                          "Info"
                          "Content"
                          "Footer";
-    height: 100vh;
     max-width: 520px;
-    margin: 0 auto;
-    
+    margin: 0 auto;   
     
 }
 
-@media (min-width: 800px) {
+@media (min-width: 820px) {
     .grid-container {
-        grid-template-columns: 300px 500px;
+        grid-template-columns: 320px 500px;
         grid-template-rows: auto 1fr auto;
         grid-template-areas: "Header Header"
                              "Info  Content"
                              "Info   Footer";
-        height: 100vh;
-        margin: 10px;
         max-width: 820px;
-        margin: 0 auto;
+        box-sizing: border-box;
     }
 
     .Info {
         position: fixed;
-        width: 300px;
+        width: 320px;
+        height: 100vh;
+        box-sizing: border-box;
     }
+
 }
 
 .Header {
@@ -39,43 +37,48 @@
 
 .Info {
     grid-area: Info;
+    padding: 1rem;
+    display: block;
+    padding-top: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #fafafa;
 }
 
 .Content {
     grid-area: Content;
+    padding: 1rem;
 }
 
 .Footer {
     grid-area: Footer;
+    padding: 1rem;
 }
 
 body {
     font-family:"Segoe UI",'Helvetica', 'Arial', 'Sans-Serif';
-    font-size: 1em;
+    font-size: 1rem;
     margin: 0;
 }
-nav ul, footer ul {
-    padding: 0px;
-    list-style: none;
-    font-weight: bold;
-}
-nav ul li, footer ul li {
-    display: inline;
-    margin-right: 20px;
-}
+
 a {
     text-decoration: none;
     color: #0079c1;
 }
+
 a:hover {
     text-decoration: underline;
 }
+
 h1 {
-    font-size: 3em;
-    margin:0;
+    font-size: 2.3rem;
+    padding: 0.5rem;
+    margin: 0;   
 }
+
 p {
-    line-height: 1.5em;
+    line-height: 1.5rem;
     color: #333;
 }
 
@@ -83,7 +86,46 @@ p {
     font-size: 1.5rem;
     font-weight: 300;
     margin: 0;
+    padding: 0.5rem;
 }
+
+.section-title {
+  font-size: 2em;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.section-title::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 100%;
+    background: #217346;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -1em;
+  margin-left: -1em;
+}
+
+.two-column {
+  -webkit-box-flex: 0;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding-right: 15px;
+  padding-left: 15px;
+  position: relative;
+  min-width: 250px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 
 ul {
     font-size: 1.5em;
@@ -105,55 +147,13 @@ ul.posts li {
     list-style: none;
 }
 
-section {
-  padding: 1em;
+nav ul, footer ul {
+    padding: 0px;
+    list-style: none;
+    font-weight: bold;
 }
 
-.about-me-section {
-  background-color: #fafafa;
-  display: block;
-  padding-top: 3em;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-}
-
-.section-title {
-  font-size: 2em;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.section-title::before {
-    content: "";
-    display: inline-block;
-    width: 5px;
-    height: 100%;
-    background: #217346;
-    position: absolute;
-    left: 0;
-    top: 0;
-
-}
-
-.mb-1 {
-  margin-bottom: 1em;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -1em;
-  margin-left: -1em;
-}
-
-.two-column {
-  -webkit-box-flex: 0;
-  flex: 0 0 50%;
-  max-width: 50%;
-  padding-right: 15px;
-  padding-left: 15px;
-  position: relative;
-  width: 100%;
-  box-sizing: border-box;
+nav ul li, footer ul li {
+    display: inline;
+    margin-right: 20px;
 }
