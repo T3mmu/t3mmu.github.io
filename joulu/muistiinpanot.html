@@ -46,8 +46,36 @@
             urlParams[decode(match[1])] = decode(match[2]);
         })();
 
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
         function checkStatus(){
-            setCookie(Object.keys(urlParams)[1],Object.values(urlParams)[1])
+            setCookie(Object.keys(urlParams)[0],Object.values(urlParams)[0])
+            if (getCookie("vihje1") == 2412){
+                document.getElementById("vihje1").classList.remove('d-none');
+            }
+            if (getCookie("vihje2") == 1215){
+                document.getElementById("vihje2").classList.remove('d-none');
+            }
+            if (getCookie("vihje2") == 3542){
+                document.getElementById("vihje3").classList.remove('d-none');
+            }
+            if (getCookie("vihje2") == 4586){
+                document.getElementById("vihje4").classList.remove('d-none');
+            }
         }
 
     </script>
