@@ -26,10 +26,34 @@
             window.location.href = url;
         }
 
+        function setCookie(cname, cvalue) {
+            var d = new Date();
+            d.setTime(d.getTime() + (365*24*60*60*1000));
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        var urlParams;
+        (window.onpopstate = function () {
+            var match,
+                pl     = /\+/g,  // Regex for replacing addition symbol with a space
+                search = /([^&=]+)=?([^&]*)/g,
+                decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+                query  = window.location.search.substring(1);
+
+            urlParams = {};
+            while (match = search.exec(query))
+            urlParams[decode(match[1])] = decode(match[2]);
+        })();
+
+        function checkStatus(){
+            setCookie(Object.keys(urlParams)[1],Object.values(urlParams)[1])
+        }
+
     </script>
   </head>
 
-<body class="h-100">
+<body class="h-100" onload="checkStatus()">
       
 
     <div class="container h-100 ">
@@ -55,6 +79,12 @@
                       </div>
                     <button type="submit" class="my-3 btn btn-primary btn-customized w-100">Kirjaudu</button>
                 </form>
+                <div class="d-inline-flex">
+                    <h1 id="vihje1" class="d-none">🕔</h1>
+                    <h1 id="vihje2" class="d-none">🧒🏻</h1>
+                    <h1 id="vihje3" class="d-none">⛪</h1>
+                    <h1 id="vihje4" class="d-none">🎅🏻</h1>
+                </div>
             </div>
         </div>
     </div>
