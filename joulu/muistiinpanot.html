@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Syötä koodi</title>
+    <script>
+        function check(event){
+            event.preventDefault();
+            if(koodi.value == "TONTTU" || koodi.value == "tonttu" || koodi.value == "Tonttu"){
+                document.getElementById("kirjaudu").classList.remove('d-none');
+                setTimeout(redirect.bind(null,"/kirjanpito"),1500) // kirjanpito
+            } else if (koodi.value == 568){ //lukon koodi
+                document.getElementById("kirjaudu").classList.remove('d-none');
+                setTimeout(redirect.bind(null,"/lokikirja"),1500) // Lokikirja                
+            } else {
+                document.getElementById("virhe").classList.remove('d-none');
+            }
+        }
+        function redirect(url){
+            window.location.href = url;
+        }
+
+    </script>
+  </head>
+
+<body class="h-100">
+      
+
+    <div class="container h-100 ">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-10 col-md-8 col-lg-6">
+                <h1 class="pb-4">Tonttujen salaiset muistiinpanot</h1>
+                <form class="form-example" onsubmit="check(event)">
+                    <h3>Syötä salasana</h3>
+                    <div class="form-group">
+                        <input type="text" class="form-control text-center" id="koodi" placeholder="" name="koodi">
+                    </div>
+                    <div id="kirjaudu" class="d-none alert alert-success fade show" role="alert">
+                        <strong>Jes!</strong> Kirjaudutaan sisään...
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    <div id="virhe" class="d-none alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Hupsista!</strong> Nyt taisit muistaa väärän salasanan.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    <button type="submit" class="my-3 btn btn-primary btn-customized w-100">Kirjaudu</button>
+                </form>
+            </div>
+        </div>
+    </div>
+      
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
