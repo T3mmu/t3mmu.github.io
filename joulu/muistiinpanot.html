@@ -14,10 +14,10 @@
             event.preventDefault();
             if(koodi.value == "TONTTU" || koodi.value == "tonttu" || koodi.value == "Tonttu"){
                 document.getElementById("kirjaudu").classList.remove('d-none');
-                setTimeout(redirect.bind(null,"/kirjanpito"),1500) // kirjanpito
+                setTimeout(redirect.bind(null,"/joulu/kirjanpito"),1500) // kirjanpito
             } else if (koodi.value == 568){ //lukon koodi
                 document.getElementById("kirjaudu").classList.remove('d-none');
-                setTimeout(redirect.bind(null,"/lokikirja"),1500) // Lokikirja                
+                setTimeout(redirect.bind(null,"/joulu/lokikirja"),1500) // Lokikirja                
             } else {
                 document.getElementById("virhe").classList.remove('d-none');
             }
