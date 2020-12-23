@@ -15,7 +15,7 @@
             if(koodi.value == "TONTTU" || koodi.value == "tonttu" || koodi.value == "Tonttu"){
                 document.getElementById("kirjaudu").classList.remove('d-none');
                 setTimeout(redirect.bind(null,"/joulu/kirjanpito" + getCookie("nimi")),1500) // kirjanpito
-            } else if (koodi.value == 042){ //lukon koodi
+            } else if (koodi.value == "042"){ //lukon koodi
                 document.getElementById("kirjaudu").classList.remove('d-none');
                 setTimeout(redirect.bind(null,"/joulu/lokikirja"),1500) // Lokikirja                
             } else if(koodi.value == "LOPPIAINEN" || koodi.value == "loppiainen" || koodi.value == "Loppiainen"){
