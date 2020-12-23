@@ -68,7 +68,7 @@
         function checkStatus(){
             setCookie(Object.keys(urlParams)[0],Object.values(urlParams)[0])
             if (getCookie("nimi") == ""){
-                document.getElementById("overlay").classList.add('d-none');
+                document.getElementById("overlay").classList.remove('d-none');
             }
             if (getCookie("vihje1") == 2412){
                 document.getElementById("vihje1").classList.remove('d-none');
