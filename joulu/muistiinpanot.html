@@ -23,7 +23,7 @@
                 setTimeout(redirect.bind(null,"/joulu/muistiinpanot?vihje3=3542"),1500) // 
             } else if (koodi.value == "6179"){
                 document.getElementById("onnistui2").classList.remove('d-none');
-                setTimeout(redirect.bind(null,"/joulu/valitse?" + getCookie("nimi")),1500)
+                setTimeout(redirect.bind(null,"/joulu/valitse" + getCookie("nimi")),1500)
             } else if (koodi.value.length == 4){
                 document.getElementById("jarjestys").classList.remove('d-none');
             } else {
@@ -235,7 +235,7 @@
                       </tr>
                       <tr>
                         <th scope="row">4</th>
-                        <td>🧒🏻</td>
+                        <td>🌹</td>
                       </tr>
                       <tr>
                         <th scope="row">5</th>
