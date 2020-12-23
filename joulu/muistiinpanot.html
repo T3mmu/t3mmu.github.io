@@ -15,9 +15,12 @@
             if(koodi.value == "TONTTU" || koodi.value == "tonttu" || koodi.value == "Tonttu"){
                 document.getElementById("kirjaudu").classList.remove('d-none');
                 setTimeout(redirect.bind(null,"/joulu/kirjanpito"),1500) // kirjanpito
-            } else if (koodi.value == 568){ //lukon koodi
+            } else if (koodi.value == 042){ //lukon koodi
                 document.getElementById("kirjaudu").classList.remove('d-none');
                 setTimeout(redirect.bind(null,"/joulu/lokikirja"),1500) // Lokikirja                
+            } else if(koodi.value == "LOPPIAINEN" || koodi.value == "loppiainen" || koodi.value == "Loppiainen"){
+                document.getElementById("onnistui").classList.remove('d-none');
+                setTimeout(redirect.bind(null,"/joulu/muistiinpanot?vihje3=3542"),1500) // 
             } else {
                 document.getElementById("virhe").classList.remove('d-none');
             }
@@ -70,10 +73,10 @@
             if (getCookie("vihje2") == 1215){
                 document.getElementById("vihje2").classList.remove('d-none');
             }
-            if (getCookie("vihje2") == 3542){
+            if (getCookie("vihje3") == 3542){
                 document.getElementById("vihje3").classList.remove('d-none');
             }
-            if (getCookie("vihje2") == 4586){
+            if (getCookie("vihje3") == 3542){
                 document.getElementById("vihje4").classList.remove('d-none');
             }
         }
@@ -87,7 +90,10 @@
     <div class="container h-100 ">
         <div class="row h-100 justify-content-center align-items-center">
             <div class="col-10 col-md-8 col-lg-6">
-                <h1 class="pb-4">Tonttujen salaiset muistiinpanot</h1>
+                <h1 class="pb-4" id="otsikko">Tonttujen salaiset muistiinpanot</h1>
+                <div id="video" class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/rJ7Qb3z8kro" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 <form class="form-example" onsubmit="check(event)">
                     <h3>Syötä salasana</h3>
                     <div class="form-group">
@@ -95,6 +101,12 @@
                     </div>
                     <div id="kirjaudu" class="d-none alert alert-success fade show" role="alert">
                         <strong>Jes!</strong> Kirjaudutaan sisään...
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div id="onnistui" class="d-none alert alert-success fade show" role="alert">
+                        <strong>Jes!</strong> Joulumenu on nyt kunnossa!
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
