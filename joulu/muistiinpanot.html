@@ -24,7 +24,7 @@
             } else if (koodi.value == "6179"){
                 document.getElementById("onnistui2").classList.remove('d-none');
                 setTimeout(redirect.bind(null,"/joulu/valitse?" + getCookie("nimi")),1500)
-            } else if (len(koodi.value) == 4){
+            } else if (koodi.value.length == 4){
                 document.getElementById("jarjestys").classList.remove('d-none');
             } else {
                 document.getElementById("virhe").classList.remove('d-none');
@@ -90,8 +90,8 @@
             if (getCookie("vihje1") && getCookie("vihje2") && getCookie("vihje3")){
                 document.getElementById("otsikko").classList.add('d-none');
                 document.getElementById("video").classList.remove('d-none');
-                document.getElementById("syotasalasana").classList.add('pb-4');
-                document.getElementById("taulukko").classList.add('d-none');
+                document.getElementById("syotasalasana").classList.add('py-4');
+                document.getElementById("taulukko").classList.remove('d-none');
             }
         }
 
@@ -163,7 +163,7 @@
             
             <div class="col-10 col-md-8 col-lg-6">
                 <h1 class="pb-4" id="otsikko">Tonttujen salaiset muistiinpanot</h1>
-                <div id="video" class="py-4 d-none embed-responsive embed-responsive-16by9">
+                <div id="video" class="py-4 d-none embed-responsive embed-responsive-21by9">
                     <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/Z7v7sTyQX9E" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <form class="form-example" onsubmit="check(event)">
