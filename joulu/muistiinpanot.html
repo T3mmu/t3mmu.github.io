@@ -67,6 +67,9 @@
 
         function checkStatus(){
             setCookie(Object.keys(urlParams)[0],Object.values(urlParams)[0])
+            if (getCookie("nimi")){
+                document.getElementById("overlay").classList.add('d-none');
+            }
             if (getCookie("vihje1") == 2412){
                 document.getElementById("vihje1").classList.remove('d-none');
             }
@@ -79,9 +82,46 @@
             if (getCookie("vihje3") == 3542){
                 document.getElementById("vihje4").classList.remove('d-none');
             }
+            if (getCookie("vihje1") && getCookie("vihje2") && getCookie("vihje3")){
+                document.getElementById("otsikko").classList.add('d-none');
+                document.getElementById("video").classList.remove('d-none');
+            }
+        }
+
+        function checkname(event){
+            event.preventDefault();
+            if (nimi.value.includes("Kimmo") || nimi.value.includes("Marika")) {
+                setCookie("nimi", "Kimmo ja Marika");
+                document.getElementById("kirjaudu2").classList.remove('d-none');
+                setTimeout(redirect.bind(null,"/joulu/muistiinpanot"),1500) //
+            } else if (nimi.value.includes("Max") || nimi.value.includes("Kaisa")) {
+                setCookie("nimi", "Max ja Kaisa");
+                document.getElementById("kirjaudu2").classList.remove('d-none');
+                setTimeout(redirect.bind(null,"/joulu/muistiinpanot"),1500)
+            } else if (nimi.value.includes("Hanna")) {
+                setCookie("nimi", "Max ja Kaisa");
+                document.getElementById("kirjaudu2").classList.remove('d-none');
+                setTimeout(redirect.bind(null,"/joulu/muistiinpanot"),1500)
+            } else { 
+                document.getElementById("virhe2").classList.remove('d-none');
+            }
+            
         }
 
     </script>
+    <style>
+        #overlay {
+            position: fixed; /* Sit on top of the page content */
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: white; /* Black background with opacity */
+            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+        }
+    </style>
   </head>
 
 <body class="h-100" onload="checkStatus()">
@@ -90,8 +130,30 @@
     <div class="container h-100 ">
         <div class="row h-100 justify-content-center align-items-center">
             <div class="col-10 col-md-8 col-lg-6">
+                <div id="overlay" class="d-none">
+                    <form class="form-example" onsubmit="checkname(event)">
+                        <h3>Syötä nimesi</h3>
+                        <div class="form-group">
+                            <input type="text" class="form-control text-center" id="nimi" placeholder="" name="nimi">
+                        </div>
+                        <div id="kirjaudu2" class="d-none alert alert-success fade show" role="alert">
+                            <strong>Jes!</strong> Aloitetaan!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div id="virhe2" class="d-none alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Hupsista!</strong> Nyt ei kuulosta tutulta.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                        <button type="submit" class="my-3 btn btn-primary btn-customized w-100">Aloita</button>
+                    </form>
+                </div>
+
                 <h1 class="pb-4" id="otsikko">Tonttujen salaiset muistiinpanot</h1>
-                <div id="video" class="embed-responsive embed-responsive-16by9">
+                <div id="video" class="pb-4 d-none embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/rJ7Qb3z8kro" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <form class="form-example" onsubmit="check(event)">
