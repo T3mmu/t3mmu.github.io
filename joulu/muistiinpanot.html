@@ -14,7 +14,7 @@
             event.preventDefault();
             if(koodi.value == "TONTTU" || koodi.value == "tonttu" || koodi.value == "Tonttu"){
                 document.getElementById("kirjaudu").classList.remove('d-none');
-                setTimeout(redirect.bind(null,"/joulu/kirjanpito"),1500) // kirjanpito
+                setTimeout(redirect.bind(null,"/joulu/kirjanpito" + getCookie("nimi")),1500) // kirjanpito
             } else if (koodi.value == 042){ //lukon koodi
                 document.getElementById("kirjaudu").classList.remove('d-none');
                 setTimeout(redirect.bind(null,"/joulu/lokikirja"),1500) // Lokikirja                
@@ -67,7 +67,7 @@
 
         function checkStatus(){
             setCookie(Object.keys(urlParams)[0],Object.values(urlParams)[0])
-            if (getCookie("nimi")){
+            if (getCookie("nimi") == ""){
                 document.getElementById("overlay").classList.add('d-none');
             }
             if (getCookie("vihje1") == 2412){
@@ -91,15 +91,15 @@
         function checkname(event){
             event.preventDefault();
             if (nimi.value.includes("Kimmo") || nimi.value.includes("Marika")) {
-                setCookie("nimi", "Kimmo ja Marika");
+                setCookie("nimi", "1"); // Kimmo ja Marika
                 document.getElementById("kirjaudu2").classList.remove('d-none');
                 setTimeout(redirect.bind(null,"/joulu/muistiinpanot"),1500) //
             } else if (nimi.value.includes("Max") || nimi.value.includes("Kaisa")) {
-                setCookie("nimi", "Max ja Kaisa");
+                setCookie("nimi", "2"); // Max ja Kaisa
                 document.getElementById("kirjaudu2").classList.remove('d-none');
                 setTimeout(redirect.bind(null,"/joulu/muistiinpanot"),1500)
             } else if (nimi.value.includes("Hanna")) {
-                setCookie("nimi", "Max ja Kaisa");
+                setCookie("nimi", "3"); // Hanna
                 document.getElementById("kirjaudu2").classList.remove('d-none');
                 setTimeout(redirect.bind(null,"/joulu/muistiinpanot"),1500)
             } else { 
