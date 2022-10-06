@@ -146,6 +146,6 @@
         AlterianCX_url: document.location.href,
         AlterianCX_referrer: document.referrer
       });
-      invokeRule(ddeURL, track_rule_name, JSONData, function(noReturnData) {});
+      invokeRuleAJ(ddeURL, track_rule_name, JSONData, function(noReturnData) {});
     });
 }());
